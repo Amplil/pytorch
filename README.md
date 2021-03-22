@@ -1,0 +1,2 @@
+# Colaboratoryで「PyTorchによる発展ディープラーニング」
+書籍「PyTorchによる発展ディープラーニング」をGoogleのColaboratoryで実行したコード
