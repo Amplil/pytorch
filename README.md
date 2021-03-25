@@ -1,2 +1,3 @@
 # Colaboratoryで「PyTorchによる発展ディープラーニング」
 書籍「PyTorchによる発展ディープラーニング」をGoogleのColaboratoryで実行したコード
+colaboratoryはgithubにコピーを保存できるがデフォルト保存名が、「7-6_Transformer.ipynb」から「7_6_Transformer.ipynb」と変わってしまうので注意。
