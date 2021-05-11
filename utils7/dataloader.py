@@ -115,7 +115,7 @@ def get_IMDb_DataLoaders_and_TEXT(max_length=256, batch_size=24):
         split_ratio=0.8, random_state=random.seed(1234))
 
     # torchtextで単語ベクトルとして英語学習済みモデルを読み込みます
-    english_fasttext_vectors = Vectors(name='data/../wiki-news-300d-1M.vec')
+    english_fasttext_vectors = Vectors(name='./../data/wiki-news-300d-1M.vec')
 
     # ベクトル化したバージョンのボキャブラリーを作成します
     TEXT.build_vocab(train_ds, vectors=english_fasttext_vectors, min_freq=10)
