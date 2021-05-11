@@ -11,6 +11,8 @@ import spacy
 import torchtext
 from torchtext.vocab import Vectors
 
+#aclImdb_dir='./../data/aclImdb/'
+aclImdb_dir='/content/data/aclImdb/'
 
 def get_IMDb_DataLoaders_and_TEXT(max_length=256, batch_size=24):
     """IMDbのDataLoaderとTEXTオブジェクトを取得する。 """
@@ -18,7 +20,7 @@ def get_IMDb_DataLoaders_and_TEXT(max_length=256, batch_size=24):
     # 訓練データのtsvファイルを作成します
     f = open('./data/IMDb_train.tsv', 'w')
 
-    path = './../data/aclImdb/train/pos/'
+    path = aclImdb_dir+'train/pos/'
     for fname in glob.glob(os.path.join(path, '*.txt')):
         with io.open(fname, 'r', encoding="utf-8") as ff:
             text = ff.readline()
@@ -29,7 +31,7 @@ def get_IMDb_DataLoaders_and_TEXT(max_length=256, batch_size=24):
             text = text+'\t'+'1'+'\t'+'\n'
             f.write(text)
 
-    path = './../data/aclImdb/train/neg/'
+    path = aclImdb_dir+'train/neg/'
     for fname in glob.glob(os.path.join(path, '*.txt')):
         with io.open(fname, 'r', encoding="utf-8") as ff:
             text = ff.readline()
@@ -45,7 +47,7 @@ def get_IMDb_DataLoaders_and_TEXT(max_length=256, batch_size=24):
    # テストデータの作成
     f = open('./data/IMDb_test.tsv', 'w')
 
-    path = './../data/aclImdb/test/pos/'
+    path = aclImdb_dir+'test/pos/'
     for fname in glob.glob(os.path.join(path, '*.txt')):
         with io.open(fname, 'r', encoding="utf-8") as ff:
             text = ff.readline()
@@ -56,7 +58,7 @@ def get_IMDb_DataLoaders_and_TEXT(max_length=256, batch_size=24):
             text = text+'\t'+'1'+'\t'+'\n'
             f.write(text)
 
-    path = './../data/aclImdb/test/neg/'
+    path = aclImdb_dir+'test/neg/'
     for fname in glob.glob(os.path.join(path, '*.txt')):
         with io.open(fname, 'r', encoding="utf-8") as ff:
             text = ff.readline()
